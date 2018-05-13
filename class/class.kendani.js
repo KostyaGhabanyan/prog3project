@@ -1,4 +1,4 @@
-class kendani {
+module.exports = class kendani {
     constructor(x, y, index) {
         this.x = x;
         this.y = y;
@@ -17,5 +17,5 @@ class kendani {
         }
         return found;
     }
-    
+
 }

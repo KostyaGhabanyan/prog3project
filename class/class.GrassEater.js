@@ -1,4 +1,5 @@
-class GrassEater extends kendani {
+var kendani= require("./class.kendani.js");
+module.exports = class GrassEater extends kendani {
     constructor(x, y, index) {
         super(x, y, index);
         this.energy = 8;

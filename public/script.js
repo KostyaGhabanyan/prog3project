@@ -87,21 +87,7 @@ function draw() {
 
     }
 
-    for (i in grassArr) {
-        grassArr[i].mul();
-    }
-    for (i in xotaker) {
-        xotaker[i].eat();
-    }
-    for (i in gish) {
-        gish[i].eat();
-    }
-    for (i in kextotxot) {
-        kextotxot[i].mul()
-    }
-    for (i in gazg) {
-        gazg[i].eat()
-    }
+   
 
 
 

@@ -1,10 +1,11 @@
-class gaz extends kendani {
+var kendani= require("./class.kendani.js");
+module.exports = class gaz extends kendani {
 
 
     constructor(x, y, index) {
         super(x, y, index);
         this.energy = 8;
-       
+
     }
 
     getNewCoordinates() {

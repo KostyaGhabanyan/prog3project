@@ -1,9 +1,10 @@
-class dexin extends kendani {
+var kendani= require("./class.kendani.js");
+module.exports = class dexin extends kendani {
 
 
     constructor(x, y, index) {
         super(x, y, index);
-        this.multiply = 0;  
+        this.multiply = 0;
     }
 
     getNewCoordinates() {
