@@ -39,7 +39,10 @@ module.exports = class gaz extends kendani {
         return super.chooseCell(character);
     }
     mul() {
-        var newCell = random(this.chooseCell(4));
+        
+          var index =   Math.floor(Math.random()*this.chooseCell(4).length);
+        var newCell =this.chooseCell(4)[index];
+
         if (newCell) {
             var newX = newCell[0];
             var newY = newCell[1];
@@ -57,7 +60,8 @@ module.exports = class gaz extends kendani {
 
     eat() {
         var emptyCells = this.chooseCell2(1, 3);
-        var newCell = random(emptyCells);
+        var index =   Math.floor(Math.random()*emptyCells.length);
+        var newCell =emptyCells[index];
 
         if (newCell) {
             var newX = newCell[0];

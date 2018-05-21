@@ -21,7 +21,9 @@ module.exports = class Grass extends kendani {
     mul() {
         this.multiply++;
         var emptyCells = this.chooseCell(0);
-        var newCell = random(emptyCells);
+          var index =   Math.floor(Math.random()*emptyCells.length);
+        var newCell =emptyCells[index];
+
 
         if (newCell && this.multiply >= 8) {
             var newX = newCell[0];

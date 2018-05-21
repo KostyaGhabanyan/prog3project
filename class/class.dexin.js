@@ -25,7 +25,9 @@ module.exports = class dexin extends kendani {
     }
     mul() {
         this.multiply++;
-        var newCell = random(this.chooseCell(1));
+        
+          var index =   Math.floor(Math.random()*this.chooseCell(1).length);
+        var newCell =this.chooseCell(1)[index];
         if (newCell && this.multiply >= 12) {
             var newX = newCell[0];
             var newY = newCell[1];

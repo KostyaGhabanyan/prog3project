@@ -36,7 +36,9 @@ module.exports = class gishatich extends kendani {
         return super.chooseCell(character);
     }
     mul() {
-        var newCell = random(this.chooseCell(0));
+       
+          var index =   Math.floor(Math.random()*this.chooseCell(0).length);
+        var newCell =this.chooseCell(0)[index];
         if (newCell) {
             var newX = newCell[0];
             var newY = newCell[1];
@@ -53,7 +55,9 @@ module.exports = class gishatich extends kendani {
     move() {
 
         var emptyCells = this.chooseCell2(1, 4);
-        var newCell = random(emptyCells);
+        
+          var index =   Math.floor(Math.random()*emptyCells.length);
+        var newCell =emptyCells[index];
 
 
 
@@ -97,7 +101,9 @@ module.exports = class gishatich extends kendani {
     }
     eat() {
         var emptyCells = this.chooseCell(2);
-        var newCell = random(emptyCells);
+         var index =   Math.floor(Math.random()*emptyCells.length);
+        var newCell =emptyCells[index];
+
         if (newCell) {
             this.energy++;
             var newX = newCell[0];
