@@ -15,7 +15,10 @@ function main() {
     var socket = io.connect('http://localhost:3000');
 
     socket.on("matrix", gcel);
-
+    socket.on("guyn", nerkel);
+    function nerkel(k) {
+        background(k[0], k[1], k[2]);
+    }
 
     function gcel(matrix) {
         for (var y = 0; y < matrix.length; y++) {

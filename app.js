@@ -11,6 +11,24 @@ app.get("/", function (req, res) {
 
 server.listen(3000);
 
+var l = Math.floor(Math.random()*5);
+if( l ==1){
+   k =  [254, 204, 0];
+
+
+}
+if( l ==2){
+    k= [1, 145, 254];
+
+}
+if( l ==3){
+   k =  [254, 252, 74];
+
+}
+if( l ==4){
+    k =[254, 201, 74];
+
+}
 
 
 
@@ -18,11 +36,11 @@ matrix = [];
 xQanak = 50;
 yQanak = 50;
 
-var grassArr = [];
-var xotaker = [];
-var gish = [];
-var kextotxot = [];
-var gazg = [];
+grassArr = [];
+xotaker = [];
+gish = [];
+kextotxot = [];
+gazg = [];
 
 
 
@@ -35,7 +53,7 @@ var GrassEater = require("./class/class.GrassEater.js");
 for (var y = 0; y < yQanak; y++) {
     matrix[y] = [];
     for (var x = 0; x < xQanak; x++) {
-        matrix[y][x] = Math.round(Math.random()*100+4)
+        matrix[y][x] = Math.round(Math.random() * 6)
 
     }
 }
@@ -45,7 +63,7 @@ for (var y = 0; y < yQanak; y++) {
 for (var y = 0; y < matrix.length; y++) {
     for (var x = 0; x < matrix[y].length; x++) {
         if (matrix[y][x] == 1) {
-            var newGrass = new Grass(x, y, 1);
+            var newGrass = new grass(x, y, 1);
             grassArr.push(newGrass);
 
         }
@@ -93,6 +111,7 @@ function drawInServer() {
     }
 
     io.sockets.emit("matrix", matrix);
+     io.sockets.emit("guyn", k);
 }
 
 
