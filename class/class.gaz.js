@@ -35,11 +35,22 @@ module.exports = class gaz extends kendani {
         return found;
     }
     chooseCell(character) {
+
         this.getNewCoordinates();
         return super.chooseCell(character);
     }
     mul() {
-        
+          if(k =="green"){
+            this.multiply+=12
+        }
+        if(k =="yellow"){
+            this.multiply+=6
+        } if(k =="orange"){
+            this.multiply+=2
+        }
+        if(k =="blue"){
+            this.multiply-=4
+        }
           var index =   Math.floor(Math.random()*this.chooseCell(4).length);
         var newCell =this.chooseCell(4)[index];
 

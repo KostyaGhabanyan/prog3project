@@ -19,6 +19,17 @@ module.exports = class Grass extends kendani {
     }
 
     mul() {
+        if(k =="green"){
+            this.multiply+=12
+        }
+        if(k =="yellow"){
+            this.multiply+=6
+        } if(k =="orange"){
+            this.multiply+=2
+        }
+        if(k =="blue"){
+            this.multiply==0
+        }
         this.multiply++;
         var emptyCells = this.chooseCell(0);
           var index =   Math.floor(Math.random()*emptyCells.length);

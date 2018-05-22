@@ -16,8 +16,12 @@ function main() {
 
     socket.on("matrix", gcel);
     socket.on("guyn", nerkel);
+    setInterval(nerkel, 3000);
     function nerkel(k) {
-        background(k[0], k[1], k[2]);
+        l = Math.floor(Math.random()*5)
+        background(k);
+      background('#acacac');
+       
     }
 
     function gcel(matrix) {

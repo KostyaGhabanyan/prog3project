@@ -36,7 +36,17 @@ module.exports = class GrassEater extends kendani {
         return super.chooseCell(character);
     }
     mul() {
-       
+        if(k =="green"){
+            this.multiply+=12
+        }
+        if(k =="yellow"){
+            this.multiply+=6
+        } if(k =="orange"){
+            this.multiply+=2
+        }
+        if(k =="blue"){
+            this.multiply==0
+        }
            var index =   Math.floor(Math.random()*this.chooseCell(0).length);
         var newCell =this.chooseCell(0)[index];
 

@@ -1,6 +1,6 @@
 var kendani= require("./class.kendani.js");
 module.exports = class dexin extends kendani {
-
+    
 
     constructor(x, y, index) {
         super(x, y, index);
@@ -20,10 +20,22 @@ module.exports = class dexin extends kendani {
         ];
     }
     chooseCell(character) {
+      
         this.getNewCoordinates();
         return super.chooseCell(character);
     }
     mul() {
+        if(k =="green"){
+            this.multiply+=12
+        }
+        if(k =="yellow"){
+            this.multiply+=6
+        } if(k =="orange"){
+            this.multiply+=2
+        }
+        if(k =="blue"){
+            this.multiply-=4
+        }
         this.multiply++;
         
           var index =   Math.floor(Math.random()*this.chooseCell(1).length);
@@ -39,6 +51,7 @@ module.exports = class dexin extends kendani {
                 if (newX == grassArr[i].x && newY == grassArr[i].y) {
                     grassArr.splice(i, 1);
                     break;
+                    
                 }
             }
 

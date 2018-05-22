@@ -13,20 +13,20 @@ server.listen(3000);
 
 var l = Math.floor(Math.random()*5);
 if( l ==1){
-   k =  [254, 204, 0];
+    k =  "yellow";
 
 
 }
 if( l ==2){
-    k= [1, 145, 254];
+    k= "green";
 
 }
 if( l ==3){
-   k =  [254, 252, 74];
+   k =  "orange";
 
 }
 if( l ==4){
-    k =[254, 201, 74];
+    k ="blue";
 
 }
 
