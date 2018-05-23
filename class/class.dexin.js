@@ -6,8 +6,7 @@ module.exports = class dexin extends kendani {
         super(x, y, index);
         this.multiply = 0;
     }
- setInterval(arr, 3000);
- arr(){}
+ 
     getNewCoordinates() {
         this.directions = [
             [this.x - 1, this.y - 1],

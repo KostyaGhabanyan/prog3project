@@ -1,8 +1,9 @@
 var kendani = require("./class.kendani.js");
-module.exports = class GrassEater extends kendani {
+module.exports = class arj extends kendani {
     constructor(x, y, index) {
         super(x, y, index);
         this.energy = 8;
+
     }
 
     getNewCoordinates() {
@@ -18,7 +19,6 @@ module.exports = class GrassEater extends kendani {
         ];
     }
     chooseCell2(character, character2) {
-        
         this.getNewCoordinates();
         var found = [];
         for (var i in this.directions) {
@@ -37,11 +37,12 @@ module.exports = class GrassEater extends kendani {
         return super.chooseCell(character);
     }
     mul() {
+       
+        arjmul++;
+        console.log(arjmul);
 
-        grassebaz++;
-        console.log(grassebaz);
         if (k == "#EEDCB0") {
-            this.multiply += 12
+            this.multiply ==  0
         }
         if (k == "#C5E1B3") {
             this.multiply += 6
@@ -49,29 +50,28 @@ module.exports = class GrassEater extends kendani {
             this.multiply += 2
         }
         if (k == "#EFEFEF") {
-            this.multiply == 0
+            this.multiply == 12
         }
         var index = Math.floor(Math.random() * this.chooseCell(0).length);
         var newCell = this.chooseCell(0)[index];
-
         if (newCell) {
             var newX = newCell[0];
             var newY = newCell[1];
-            matrix[newY][newX] = 2;
+            matrix[newY][newX] = 6;
 
-            var eater = new GrassEater(newX, newY, this.index);
-            xotaker.push(eater);
+            var arjj = new arj(newX, newY, this.index);
+            arja.push(yes);
             this.energy = 8;
         }
     }
 
 
-
+  
     move() {
 
         grassecharj++;
         console.log(grassecharj);
-        if (k != "#EFEFEF") {
+        if (k != "#EEDCB0") {
             var emptyCells = this.chooseCell2(0, 4);
             var index = Math.floor(Math.random() * emptyCells.length);
             var newCell = emptyCells[index];
@@ -105,30 +105,31 @@ module.exports = class GrassEater extends kendani {
         }
     }
     eat() {
+      
+        gishkerav++;
+        console.log(gishkerav);
 
-        grasseker++;
-        console.log(grasseker);
-        var emptyCells = this.chooseCell(1);
+        var emptyCells = this.chooseCell(3);
         var index = Math.floor(Math.random() * emptyCells.length);
         var newCell = emptyCells[index];
+
         if (newCell) {
             this.energy++;
             var newX = newCell[0];
             var newY = newCell[1];
 
-            matrix[newY][newX] = 2;
+            matrix[newY][newX] = 6;
             matrix[this.y][this.x] = 0;
             this.y = newY;
             this.x = newX;
-            for (var i in grassArr) {
-                if (newX == grassArr[i].x && newY == grassArr[i].y) {
-                    grassArr.splice(i, 1);
+            for (var i in gish) {
+                if (newX == gish[i].x && newY == gish[i].y) {
+                    gish.splice(i, 1);
                     break;
                 }
             }
-            if (this.energy >= 12) {
+            if (this.energy >= 12 && k != "#EEDCB0") {
                 this.mul();
-                
             }
         }
         else {
@@ -136,21 +137,19 @@ module.exports = class GrassEater extends kendani {
         }
     }
     die() {
-
-        grassemer++;
-        console.log(grassemer);
-
+   
+        arjmer++;
+        console.log(arjmer);
 
         matrix[this.y][this.x] = 0;
-
-        for (var i in xotaker) {
-            if (this.x == xotaker[i].x && this.y == xotaker[i].y) {
-                xotaker.splice(i, 1);
+        for (var i in arja) {
+            if (this.x == arja[i].x && this.y == arja[i].y) {
+               arja.splice(i, 1);
                 break;
             }
         }
-
-
     }
-
 }
+
+
+

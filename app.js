@@ -35,6 +35,7 @@ if (l == 4) {
 
 
 
+
 matrix = [];
 xQanak = 50;
 yQanak = 50;
@@ -44,7 +45,7 @@ xotaker = [];
 gish = [];
 kextotxot = [];
 gazg = [];
-
+arja =[];
 
 
 var dexin = require("./class/class.grass.js");
@@ -52,6 +53,7 @@ var gaz = require("./class/class.gaz.js");
 var gishatich = require("./class/class.gishatich.js");
 var grass = require("./class/class.grass.js");
 var GrassEater = require("./class/class.GrassEater.js");
+var arj = require("./class/class.arj.js");
 grassbaz = 0;
 dexinbaz = 0;
 grassebaz = 0;
@@ -65,10 +67,13 @@ gishmer = 0;
 gazmer = 0;
 gazkerav = 0;
 gazmerav = 0;
+arjcharj = 0;
+arjmer =0;
+arjmul = 0;
 for (var y = 0; y < yQanak; y++) {
     matrix[y] = [];
     for (var x = 0; x < xQanak; x++) {
-        matrix[y][x] = Math.floor(Math.random() * 6)
+        matrix[y][x] = Math.floor(Math.random() * 7)
 
     }
 }
@@ -97,6 +102,10 @@ for (var y = 0; y < matrix.length; y++) {
         else if (matrix[y][x] == 5) {
             var gaz1 = new gaz(x, y, 5);
             gazg.push(gaz1);
+        }
+        else if (matrix[y][x] == 6) {
+            var arj1 = new arj(x, y, 6);
+            arja.push(arj1);
         }
     }
 }
@@ -127,12 +136,19 @@ function drawInServer() {
 
     io.sockets.emit("matrix", [matrix, k]);
 }
-
+function  na(){
+    for (i in xotaker) {
+        xotaker[i].die();
+    }
+    for (i in kextotxot) {
+        kextotxot[i].mul()
+    }
+  }
 
 io.on('connection', function () {
     setInterval( function(){
         drawInServer();
-        
+        na();
 
 
         }, 3000);

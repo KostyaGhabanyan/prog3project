@@ -49,6 +49,10 @@ function main() {
                     fill(190, 150, 0);
                     rect(x * side, y * side, side, side);
                 }
+                else if (matrix[y][x] == 6) {
+                    fill(129, 224, 254);
+                    rect(x * side, y * side, side, side);
+                }
             }
         }
     }
