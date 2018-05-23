@@ -1,4 +1,4 @@
-var kendani= require("./class.kendani.js");
+var kendani = require("./class.kendani.js");
 module.exports = class gaz extends kendani {
 
 
@@ -40,19 +40,22 @@ module.exports = class gaz extends kendani {
         return super.chooseCell(character);
     }
     mul() {
-          if(k =="green"){
-            this.multiply+=12
+    
+        gazmer++;
+        console.log(gazmer)
+        if (k == "#EEDCB0") {
+            this.multiply += 12
         }
-        if(k =="yellow"){
-            this.multiply+=6
-        } if(k =="orange"){
-            this.multiply+=2
+        if (k == "#C5E1B3") {
+            this.multiply += 6
+        } if (k == "#E5F0A8") {
+            this.multiply += 2
         }
-        if(k =="blue"){
-            this.multiply-=4
+        if (k == "#EFEFEF") {
+            this.multiply -= 4
         }
-          var index =   Math.floor(Math.random()*this.chooseCell(4).length);
-        var newCell =this.chooseCell(4)[index];
+        var index = Math.floor(Math.random() * this.chooseCell(4).length);
+        var newCell = this.chooseCell(4)[index];
 
         if (newCell) {
             var newX = newCell[0];
@@ -70,9 +73,14 @@ module.exports = class gaz extends kendani {
 
 
     eat() {
+      
+        gazkerav++;
+        console.log(gazkerav);
+
+
         var emptyCells = this.chooseCell2(1, 3);
-        var index =   Math.floor(Math.random()*emptyCells.length);
-        var newCell =emptyCells[index];
+        var index = Math.floor(Math.random() * emptyCells.length);
+        var newCell = emptyCells[index];
 
         if (newCell) {
             var newX = newCell[0];
@@ -110,6 +118,9 @@ module.exports = class gaz extends kendani {
 
     }
     die() {
+       
+        gazmerav++;
+        console.log(gazmerav);
 
 
         matrix[this.y][this.x] = 0;

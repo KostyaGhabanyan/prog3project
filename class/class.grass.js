@@ -1,4 +1,4 @@
-var kendani= require("./class.kendani.js");
+var kendani = require("./class.kendani.js");
 module.exports = class Grass extends kendani {
 
     constructor(x, y, index) {
@@ -19,21 +19,25 @@ module.exports = class Grass extends kendani {
     }
 
     mul() {
-        if(k =="green"){
-            this.multiply+=12
+       
+        grassbaz++;
+        console.log(grassbaz);
+
+        if (k == "#EEDCB0") {
+            this.multiply += 12
         }
-        if(k =="yellow"){
-            this.multiply+=6
-        } if(k =="orange"){
-            this.multiply+=2
+        if (k == "#C5E1B3") {
+            this.multiply += 6
+        } if (k == "#E5F0A8") {
+            this.multiply += 2
         }
-        if(k =="blue"){
-            this.multiply==0
+        if (k == "#EFEFEF") {
+            this.multiply == 0
         }
         this.multiply++;
         var emptyCells = this.chooseCell(0);
-          var index =   Math.floor(Math.random()*emptyCells.length);
-        var newCell =emptyCells[index];
+        var index = Math.floor(Math.random() * emptyCells.length);
+        var newCell = emptyCells[index];
 
 
         if (newCell && this.multiply >= 8) {

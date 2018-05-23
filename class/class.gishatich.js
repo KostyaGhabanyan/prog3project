@@ -1,8 +1,9 @@
-var kendani= require("./class.kendani.js");
+var kendani = require("./class.kendani.js");
 module.exports = class gishatich extends kendani {
     constructor(x, y, index) {
         super(x, y, index);
         this.energy = 8;
+
     }
 
     getNewCoordinates() {
@@ -36,19 +37,23 @@ module.exports = class gishatich extends kendani {
         return super.chooseCell(character);
     }
     mul() {
-        if(k =="green"){
-            this.multiply+=12
+      
+        gishmul++;
+        console.log(gishmul);
+
+        if (k == "#EEDCB0") {
+            this.multiply += 12
         }
-        if(k =="yellow"){
-            this.multiply+=6
-        } if(k =="orange"){
-            this.multiply+=2
+        if (k == "#C5E1B3") {
+            this.multiply += 6
+        } if (k == "#E5F0A8") {
+            this.multiply += 2
         }
-        if(k =="blue"){
-            this.multiply==0
+        if (k == "#EFEFEF") {
+            this.multiply == 0
         }
-          var index =   Math.floor(Math.random()*this.chooseCell(0).length);
-        var newCell =this.chooseCell(0)[index];
+        var index = Math.floor(Math.random() * this.chooseCell(0).length);
+        var newCell = this.chooseCell(0)[index];
         if (newCell) {
             var newX = newCell[0];
             var newY = newCell[1];
@@ -61,13 +66,16 @@ module.exports = class gishatich extends kendani {
     }
 
 
-
+  
     move() {
+     
+        gishcharj++;
+        console.log(gishcharj);
 
         var emptyCells = this.chooseCell2(1, 4);
-        
-          var index =   Math.floor(Math.random()*emptyCells.length);
-        var newCell =emptyCells[index];
+
+        var index = Math.floor(Math.random() * emptyCells.length);
+        var newCell = emptyCells[index];
 
 
 
@@ -110,9 +118,13 @@ module.exports = class gishatich extends kendani {
 
     }
     eat() {
+      
+        gishkerav++;
+        console.log(gishkerav);
+
         var emptyCells = this.chooseCell(2);
-         var index =   Math.floor(Math.random()*emptyCells.length);
-        var newCell =emptyCells[index];
+        var index = Math.floor(Math.random() * emptyCells.length);
+        var newCell = emptyCells[index];
 
         if (newCell) {
             this.energy++;
@@ -129,7 +141,7 @@ module.exports = class gishatich extends kendani {
                     break;
                 }
             }
-            if (this.energy >= 12) {
+            if (this.energy >= 12 && k != "#EFEFEF") {
                 this.mul();
             }
         }
@@ -138,6 +150,10 @@ module.exports = class gishatich extends kendani {
         }
     }
     die() {
+   
+        gishmer++;
+        console.log(gishmer);
+
         matrix[this.y][this.x] = 0;
         for (var i in gish) {
             if (this.x == gish[i].x && this.y == gish[i].y) {

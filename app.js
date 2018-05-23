@@ -11,22 +11,25 @@ app.get("/", function (req, res) {
 
 server.listen(3000);
 
-var l = Math.floor(Math.random()*5);
-if( l ==1){
-    k =  "yellow";
+var l = Math.floor(Math.random() * 4 + 1);
+
+console.log(l);
+
+if (l == 1) {
+    k = "#EEDCB0";
 
 
 }
-if( l ==2){
-    k= "green";
+if (l == 2) {
+    k = "#C5E1B3";
 
 }
-if( l ==3){
-   k =  "orange";
+if (l == 3) {
+    k = "#E5F0A8";
 
 }
-if( l ==4){
-    k ="blue";
+if (l == 4) {
+    k = "#EFEFEF";
 
 }
 
@@ -49,11 +52,23 @@ var gaz = require("./class/class.gaz.js");
 var gishatich = require("./class/class.gishatich.js");
 var grass = require("./class/class.grass.js");
 var GrassEater = require("./class/class.GrassEater.js");
-
+grassbaz = 0;
+dexinbaz = 0;
+grassebaz = 0;
+grassecharj = 0;
+grasseker = 0;
+grassemer = 0;
+gishmul = 0;
+gishcharj = 0
+gishkerav = 0;
+gishmer = 0;
+gazmer = 0;
+gazkerav = 0;
+gazmerav = 0;
 for (var y = 0; y < yQanak; y++) {
     matrix[y] = [];
     for (var x = 0; x < xQanak; x++) {
-        matrix[y][x] = Math.round(Math.random() * 6)
+        matrix[y][x] = Math.floor(Math.random() * 6)
 
     }
 }
@@ -110,13 +125,17 @@ function drawInServer() {
         gazg[i].eat()
     }
 
-    io.sockets.emit("matrix", matrix);
-     io.sockets.emit("guyn", k);
+    io.sockets.emit("matrix", [matrix, k]);
 }
 
 
 io.on('connection', function () {
-    setInterval(drawInServer, 3000);
+    setInterval( function(){
+        drawInServer();
+        
+
+
+        }, 3000);
 
 
 });
