@@ -133,6 +133,9 @@ function drawInServer() {
     for (i in gazg) {
         gazg[i].eat()
     }
+    for (i in arja) {
+        arja[i].eat()
+    }
 
     io.sockets.emit("matrix", [matrix, k]);
 }
