@@ -18,7 +18,13 @@ function main() {
         gcel(data[0], col);
 
 
-    });
+    });var fs = require('fs');
+
+function all(){
+   var file  = "json";
+   fs.appendFileSync(file, "a\n");
+}
+all();
 
 
     function gcel(matrix,col) {

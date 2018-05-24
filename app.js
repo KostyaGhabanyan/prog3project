@@ -10,29 +10,30 @@ app.get("/", function (req, res) {
 });
 
 server.listen(3000);
+function ha() {
+    var l = Math.floor(Math.random() * 4 + 1);
 
-var l = Math.floor(Math.random() * 4 + 1);
+    console.log(l);
 
-console.log(l);
-
-if (l == 1) {
-    k = "#EEDCB0";
+    if (l == 1) {
+        k = "#EEDCB0";
 
 
+    }
+    if (l == 2) {
+        k = "#C5E1B3";
+
+    }
+    if (l == 3) {
+        k = "#E5F0A8";
+
+    }
+    if (l == 4) {
+        k = "#EFEFEF";
+
+    }
 }
-if (l == 2) {
-    k = "#C5E1B3";
-
-}
-if (l == 3) {
-    k = "#E5F0A8";
-
-}
-if (l == 4) {
-    k = "#EFEFEF";
-
-}
-
+ha();
 
 
 
@@ -45,8 +46,13 @@ xotaker = [];
 gish = [];
 kextotxot = [];
 gazg = [];
-arja =[];
-
+arja = [];
+var  fs = require('fs');
+fs.writeFile("hello.txt", "Hello world\n", function(err){
+       console.log("arjdie");
+   });
+   
+    
 
 var dexin = require("./class/class.grass.js");
 var gaz = require("./class/class.gaz.js");
@@ -68,7 +74,7 @@ gazmer = 0;
 gazkerav = 0;
 gazmerav = 0;
 arjcharj = 0;
-arjmer =0;
+arjmer = 0;
 arjmul = 0;
 for (var y = 0; y < yQanak; y++) {
     matrix[y] = [];
@@ -139,22 +145,22 @@ function drawInServer() {
 
     io.sockets.emit("matrix", [matrix, k]);
 }
-function  na(){
+function na() {
     for (i in xotaker) {
         xotaker[i].die();
     }
     for (i in kextotxot) {
         kextotxot[i].mul()
     }
-  }
+}
 
 io.on('connection', function () {
-    setInterval( function(){
+    setInterval(function () {
         drawInServer();
         na();
+        ha();
 
-
-        }, 3000);
+    }, 3000);
 
 
 });

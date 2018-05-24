@@ -3,6 +3,7 @@ module.exports = class arj extends kendani {
     constructor(x, y, index) {
         super(x, y, index);
         this.energy = 8;
+        this.ser ="txa"
 
     }
 
@@ -71,7 +72,7 @@ module.exports = class arj extends kendani {
 
         grassecharj++;
         console.log(grassecharj);
-        if (k != "#EEDCB0") {
+        if (k != "#EEDCB0" && this.ser!="axjik") {
             var emptyCells = this.chooseCell2(0, 4);
             var index = Math.floor(Math.random() * emptyCells.length);
             var newCell = emptyCells[index];
@@ -137,10 +138,10 @@ module.exports = class arj extends kendani {
         }
     }
     die() {
-   
+   function err(){
         arjmer++;
         console.log(arjmer);
-
+   }
         matrix[this.y][this.x] = 0;
         for (var i in arja) {
             if (this.x == arja[i].x && this.y == arja[i].y) {
