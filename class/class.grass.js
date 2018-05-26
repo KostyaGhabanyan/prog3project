@@ -1,4 +1,5 @@
 var kendani = require("./class.kendani.js");
+var fs = require('fs');
 module.exports = class Grass extends kendani {
 
     constructor(x, y, index) {
@@ -19,9 +20,19 @@ module.exports = class Grass extends kendani {
     }
 
     mul() {
-       
-        grassbaz++;
-        console.log(grassbaz);
+        function grr() {
+
+            grassbaz++;
+
+            fs.writeFile("grass.txt", "grassbazmacav\n" + grassbaz, function (grrr) {
+
+
+            });
+
+        }
+
+        grr();
+
 
         if (k == "#EEDCB0") {
             this.multiply += 12

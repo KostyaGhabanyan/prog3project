@@ -1,4 +1,5 @@
 var kendani = require("./class.kendani.js");
+var fs = require('fs');
 module.exports = class dexin extends kendani {
 
 
@@ -6,7 +7,7 @@ module.exports = class dexin extends kendani {
         super(x, y, index);
         this.multiply = 0;
     }
- 
+
     getNewCoordinates() {
         this.directions = [
             [this.x - 1, this.y - 1],
@@ -25,9 +26,22 @@ module.exports = class dexin extends kendani {
         return super.chooseCell(character);
     }
     mul() {
-     
-        dexinbaz++;
-        console.log(dexinbaz);
+
+        function eattl() {
+            dexinbaz++;
+
+            fs.writeFile("dexin.txt", "dexinbazmacav\n" + dexinbaz, function (eattll) {
+
+
+            });
+
+        }
+
+        eattl();
+
+
+
+
 
         if (k == "#EEDCB0") {
             this.multiply += 12

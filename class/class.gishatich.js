@@ -1,8 +1,11 @@
 var kendani = require("./class.kendani.js");
+var fs = require('fs');
 module.exports = class gishatich extends kendani {
     constructor(x, y, index) {
         super(x, y, index);
         this.energy = 8;
+        y = Math.floor(Math.random() * 2)
+        this.ser = y
 
     }
 
@@ -37,9 +40,20 @@ module.exports = class gishatich extends kendani {
         return super.chooseCell(character);
     }
     mul() {
-      
-        gishmul++;
-        console.log(gishmul);
+        function eattr() {
+
+            gishmul++;
+
+            fs.writeFile("gish.txt", "gishbazmacav\n" + gishmul, function (eattrr) {
+
+
+            });
+
+        }
+
+        eattr();
+
+
 
         if (k == "#EEDCB0") {
             this.multiply += 12
@@ -66,11 +80,27 @@ module.exports = class gishatich extends kendani {
     }
 
 
-  
+
     move() {
-     
+        function eattrr() {
+
+            gishcharj++;
+
+            fs.writeFile("gish.txt", "\ngishbazmacav\n" + gishmul + "\ngishcharj\n" + gishcharj, function (eattrrr) {
+
+
+            });
+
+        }
+
+        eattrr();
+        if (this.ser == 0) {
+            var d = 2
+        }
+        if (this.ser == 1) {
+            var d = 4
+        }
         gishcharj++;
-        console.log(gishcharj);
 
         var emptyCells = this.chooseCell2(1, 4);
 
@@ -109,7 +139,7 @@ module.exports = class gishatich extends kendani {
             this.x = newX;
 
 
-            if (this.energy <= 0) {
+            if (this.energy <= d) {
                 this.die();
             }
 
@@ -118,9 +148,20 @@ module.exports = class gishatich extends kendani {
 
     }
     eat() {
-      
+        function eattrrr() {
+
+            gishkerav++;
+
+            fs.writeFile("gish.txt", "\ngishbazmacav\n" + gishmul + "\ngishcharj\n" + gishcharj + "  \ngishkerav\n" + gishkerav, function (eattrrrr) {
+
+
+            });
+
+        }
+
+        eattrrr();
         gishkerav++;
-        console.log(gishkerav);
+
 
         var emptyCells = this.chooseCell(2);
         var index = Math.floor(Math.random() * emptyCells.length);
@@ -150,9 +191,21 @@ module.exports = class gishatich extends kendani {
         }
     }
     die() {
-   
-        gishmer++;
-        console.log(gishmer);
+        function eattrrrr() {
+
+            gishmer++;
+            var f = "\ngishbazmacav\n" + gishmul + "\ngishcharj\n" + gishcharj + " \n gishkerav\n" + gishkerav
+            fs.writeFile("gish.txt", f + " \n gishmerav\n" + gishmer, function (eattrrrr) {
+
+
+            });
+
+        }
+
+        eattrrrr();
+
+
+
 
         matrix[this.y][this.x] = 0;
         for (var i in gish) {

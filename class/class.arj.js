@@ -1,9 +1,11 @@
 var kendani = require("./class.kendani.js");
+var fs = require('fs');
 module.exports = class arj extends kendani {
     constructor(x, y, index) {
         super(x, y, index);
         this.energy = 8;
-        this.ser ="txa"
+        y = Math.floor(Math.random() * 2)
+        this.ser = y
 
     }
 
@@ -38,12 +40,19 @@ module.exports = class arj extends kendani {
         return super.chooseCell(character);
     }
     mul() {
-       
-        arjmul++;
-        console.log(arjmul);
+        function eatttl() {
+            arjmul++;
+
+            fs.writeFile("arj.txt", "\n\n\narjbaz\n" + arjmul, function (eattt) {
+
+            });
+
+        }
+        eatttl();
+
 
         if (k == "#EEDCB0") {
-            this.multiply ==  0
+            this.multiply == 0
         }
         if (k == "#C5E1B3") {
             this.multiply += 6
@@ -61,18 +70,26 @@ module.exports = class arj extends kendani {
             matrix[newY][newX] = 6;
 
             var arjj = new arj(newX, newY, this.index);
-            arja.push(yes);
+            arja.push(arjj);
             this.energy = 8;
         }
     }
 
 
-  
-    move() {
 
-        grassecharj++;
-        console.log(grassecharj);
-        if (k != "#EEDCB0" && this.ser!="axjik") {
+    move() {
+        function eattt() {
+            arjcharj++;
+
+            fs.writeFile("arj.txt", "\n\n\narjbaz\n" + arjmul + "\n\n\narjcharj\n" + arjcharj, function (eatt) {
+
+            });
+
+        }
+        eattt();
+
+       
+        if (k != "#EEDCB0" && this.ser != "axjik") {
             var emptyCells = this.chooseCell2(0, 4);
             var index = Math.floor(Math.random() * emptyCells.length);
             var newCell = emptyCells[index];
@@ -106,9 +123,19 @@ module.exports = class arj extends kendani {
         }
     }
     eat() {
-      
-        gishkerav++;
-        console.log(gishkerav);
+        function eatt() {
+            arjkerav++;
+
+            fs.writeFile("arj.txt", "\n\n\narjbaz\n" + arjmul + "\n\n\narjcharj\n" + arjcharj + "\narjkerav\n" + arjkerav, function (err) {
+
+
+            });
+
+        }
+
+        eatt();
+
+
 
         var emptyCells = this.chooseCell(3);
         var index = Math.floor(Math.random() * emptyCells.length);
@@ -129,7 +156,13 @@ module.exports = class arj extends kendani {
                     break;
                 }
             }
-            if (this.energy >= 12 && k != "#EEDCB0") {
+            if (this.ser == 0) {
+                var j = 4
+            }
+            if (this.ser == 1) {
+                var j = 20
+            }
+            if (this.energy >= j && k != "#EEDCB0") {
                 this.mul();
             }
         }
@@ -138,14 +171,19 @@ module.exports = class arj extends kendani {
         }
     }
     die() {
-   function err(){
-        arjmer++;
-        console.log(arjmer);
-   }
+        function err() {
+            arjmer++;
+            var a = "\n\n\narjbaz\n" + arjmul + "\n\n\narjcharj,\n" + arjcharj + "arjkerav,\n" + arjkerav
+            fs.writeFile("arj.txt", a + "\n\n arjmer\n" + arjmer, function (err) {
+
+            });
+
+        }
+        err();
         matrix[this.y][this.x] = 0;
         for (var i in arja) {
             if (this.x == arja[i].x && this.y == arja[i].y) {
-               arja.splice(i, 1);
+                arja.splice(i, 1);
                 break;
             }
         }

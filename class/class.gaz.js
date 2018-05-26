@@ -1,4 +1,5 @@
 var kendani = require("./class.kendani.js");
+var fs = require('fs');
 module.exports = class gaz extends kendani {
 
 
@@ -40,9 +41,21 @@ module.exports = class gaz extends kendani {
         return super.chooseCell(character);
     }
     mul() {
-    
-        gazmer++;
-        console.log(gazmer)
+
+        function eattll() {
+
+            gazbaz++;
+
+            fs.writeFile("gaz.txt", "gazbaz\n" + gazbaz, function (eattlll) {
+
+
+            });
+
+        }
+
+        eattll();
+
+
         if (k == "#EEDCB0") {
             this.multiply += 12
         }
@@ -73,9 +86,21 @@ module.exports = class gaz extends kendani {
 
 
     eat() {
-      
         gazkerav++;
-        console.log(gazkerav);
+        function eattlll() {
+
+
+            var c = "gazbazmacav\n" + gazbaz
+            fs.writeFile("gaz.txt", c + "\ngazkerav\n" + gazkerav, function (eattllll) {
+
+
+            });
+
+        }
+
+        eattlll();
+
+
 
 
         var emptyCells = this.chooseCell2(1, 3);
@@ -118,9 +143,21 @@ module.exports = class gaz extends kendani {
 
     }
     die() {
-       
         gazmerav++;
-        console.log(gazmerav);
+        function eattllll() {
+            var t = "gazbazmacav\n" + gazbaz + "\ngazkerav\n" + gazkerav
+            fs.writeFile("gaz.txt", t + "\ngazmerav\n" + gazmerav, function (eattllll) {
+
+
+            });
+
+        }
+
+        eattllll();
+
+
+
+
 
 
         matrix[this.y][this.x] = 0;

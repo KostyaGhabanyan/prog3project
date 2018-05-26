@@ -1,8 +1,11 @@
 var kendani = require("./class.kendani.js");
+var fs = require('fs');
 module.exports = class GrassEater extends kendani {
     constructor(x, y, index) {
         super(x, y, index);
-        this.energy = 8;
+        this.energy = 8; y = Math.floor(Math.random() * 2)
+        this.ser = y
+
     }
 
     getNewCoordinates() {
@@ -18,7 +21,7 @@ module.exports = class GrassEater extends kendani {
         ];
     }
     chooseCell2(character, character2) {
-        
+
         this.getNewCoordinates();
         var found = [];
         for (var i in this.directions) {
@@ -37,9 +40,19 @@ module.exports = class GrassEater extends kendani {
         return super.chooseCell(character);
     }
     mul() {
+        function mull() {
 
-        grassebaz++;
-        console.log(grassebaz);
+            grassebaz++;
+
+            fs.writeFile("grasseater.txt", "xotakerbaz\n" + grassebaz, function (mulll) {
+
+
+            });
+
+        }
+
+        mull();
+
         if (k == "#EEDCB0") {
             this.multiply += 12
         }
@@ -68,9 +81,19 @@ module.exports = class GrassEater extends kendani {
 
 
     move() {
+        function mulll() {
 
-        grassecharj++;
-        console.log(grassecharj);
+            grassecharj++;
+
+            fs.writeFile("grasseater.txt", "\nxotakerbaz\n" + grassebaz + "\nxotakersharj\n" + grassecharj, function (mullll) {
+
+
+            });
+
+        }
+
+        mulll();
+
         if (k != "#EFEFEF") {
             var emptyCells = this.chooseCell2(0, 4);
             var index = Math.floor(Math.random() * emptyCells.length);
@@ -105,9 +128,19 @@ module.exports = class GrassEater extends kendani {
         }
     }
     eat() {
+        function mullll() {
 
-        grasseker++;
-        console.log(grasseker);
+            grasseker++;
+            var v = "\nxotakerbaz\n" + grassebaz + "\nxotakersharj\n" + grassecharj;
+            fs.writeFile("grasseater.txt", v + "\nxotakerkerav\n" + grasseker, function (mulllll) {
+
+
+            });
+
+        }
+
+        mullll();
+
         var emptyCells = this.chooseCell(1);
         var index = Math.floor(Math.random() * emptyCells.length);
         var newCell = emptyCells[index];
@@ -126,9 +159,16 @@ module.exports = class GrassEater extends kendani {
                     break;
                 }
             }
-            if (this.energy >= 12) {
+            if (this.ser == 0) {
+                var r = 4
+            }
+            if (this.ser == 1) {
+                var r = 8
+            }
+
+            if (this.energy >= r) {
                 this.mul();
-                
+
             }
         }
         else {
@@ -136,9 +176,19 @@ module.exports = class GrassEater extends kendani {
         }
     }
     die() {
+        function mulllll() {
 
-        grassemer++;
-        console.log(grassemer);
+            grassemer++;
+            var v = "\nxotakerbaz\n" + grassebaz + "\nxotakersharj\n" + grassecharj;
+            fs.writeFile("grasseater.txt", v + "\nxotakerkerav\n" + grasseker + "\nxotakermerav\n" + grassemer, function (mulllll) {
+
+
+            });
+
+        }
+
+        mulllll();
+
 
 
         matrix[this.y][this.x] = 0;

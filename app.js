@@ -47,12 +47,8 @@ gish = [];
 kextotxot = [];
 gazg = [];
 arja = [];
-var  fs = require('fs');
-fs.writeFile("hello.txt", "Hello world\n", function(err){
-       console.log("arjdie");
-   });
-   
-    
+
+
 
 var dexin = require("./class/class.grass.js");
 var gaz = require("./class/class.gaz.js");
@@ -67,15 +63,17 @@ grassecharj = 0;
 grasseker = 0;
 grassemer = 0;
 gishmul = 0;
-gishcharj = 0
+gishcharj = 0;
 gishkerav = 0;
 gishmer = 0;
-gazmer = 0;
+gazbaz = 0;
 gazkerav = 0;
+
 gazmerav = 0;
 arjcharj = 0;
 arjmer = 0;
 arjmul = 0;
+arjkerav = 0;
 for (var y = 0; y < yQanak; y++) {
     matrix[y] = [];
     for (var x = 0; x < xQanak; x++) {
@@ -139,6 +137,9 @@ function drawInServer() {
     for (i in gazg) {
         gazg[i].eat()
     }
+    // for (i in gazg) {
+    //     gazg[i].mul()
+    // }
     for (i in arja) {
         arja[i].eat()
     }
