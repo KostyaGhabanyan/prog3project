@@ -15,7 +15,7 @@ app.get("/", function (req, res) {
     res.redirect("public");
 });
 
-server.listen(app.get('port'));
+app.listen(app.get('port'));
 function ha() {
     var l = Math.floor(Math.random() * 4 + 1);
 
