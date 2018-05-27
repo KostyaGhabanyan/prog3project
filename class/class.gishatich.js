@@ -40,9 +40,10 @@ module.exports = class gishatich extends kendani {
         return super.chooseCell(character);
     }
     mul() {
+        gishmul++;
         function eattr() {
 
-            gishmul++;
+
 
             fs.writeFile("gish.txt", "gishbazmacav\n" + gishmul, function (eattrr) {
 
@@ -82,9 +83,10 @@ module.exports = class gishatich extends kendani {
 
 
     move() {
+        gishcharj++;
         function eattrr() {
 
-            gishcharj++;
+
 
             fs.writeFile("gish.txt", "\ngishbazmacav\n" + gishmul + "\ngishcharj\n" + gishcharj, function (eattrrr) {
 
@@ -100,7 +102,7 @@ module.exports = class gishatich extends kendani {
         if (this.ser == 1) {
             var d = 4
         }
-        gishcharj++;
+
 
         var emptyCells = this.chooseCell2(1, 4);
 
@@ -148,9 +150,10 @@ module.exports = class gishatich extends kendani {
 
     }
     eat() {
+        gishkerav++;
         function eattrrr() {
 
-            gishkerav++;
+
 
             fs.writeFile("gish.txt", "\ngishbazmacav\n" + gishmul + "\ngishcharj\n" + gishcharj + "  \ngishkerav\n" + gishkerav, function (eattrrrr) {
 
@@ -160,7 +163,7 @@ module.exports = class gishatich extends kendani {
         }
 
         eattrrr();
-        gishkerav++;
+
 
 
         var emptyCells = this.chooseCell(2);
@@ -191,9 +194,10 @@ module.exports = class gishatich extends kendani {
         }
     }
     die() {
+        gishmer++;
         function eattrrrr() {
 
-            gishmer++;
+
             var f = "\ngishbazmacav\n" + gishmul + "\ngishcharj\n" + gishcharj + " \n gishkerav\n" + gishkerav
             fs.writeFile("gish.txt", f + " \n gishmerav\n" + gishmer, function (eattrrrr) {
 

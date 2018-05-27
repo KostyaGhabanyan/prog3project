@@ -1,15 +1,17 @@
+
 var express = require('express');
+
 var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
-
+app.set('port', process.env.PORT || 3000);
 app.use(express.static("public"));
 
 app.get("/", function (req, res) {
     res.redirect("public");
 });
 
-server.listen(3000);
+server.listen(app.get('port'));
 function ha() {
     var l = Math.floor(Math.random() * 4 + 1);
 
@@ -154,13 +156,25 @@ function na() {
         kextotxot[i].mul()
     }
 }
-
+var takter = 0;
+var obj = {
+    'xotQanak': [],
+    'xotakerQanak': [],
+};
 io.on('connection', function () {
     setInterval(function () {
+        takter++;
         drawInServer();
         na();
         ha();
 
+
+        if (takter % 2 == 0) {
+            obj.xotQanak.push(grassbaz);
+            fs.writeFile("grass.json", obj);;
+            console.log(obj);
+
+        }
     }, 3000);
 
 

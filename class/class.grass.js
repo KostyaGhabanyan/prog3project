@@ -20,20 +20,7 @@ module.exports = class Grass extends kendani {
     }
 
     mul() {
-        function grr() {
-
-            grassbaz++;
-
-            fs.writeFile("grass.txt", "grassbazmacav\n" + grassbaz, function (grrr) {
-
-
-            });
-
-        }
-
-        grr();
-
-
+    
         if (k == "#EEDCB0") {
             this.multiply += 12
         }
@@ -52,6 +39,7 @@ module.exports = class Grass extends kendani {
 
 
         if (newCell && this.multiply >= 8) {
+            grassbaz++;
             var newX = newCell[0];
             var newY = newCell[1];
             matrix[newY][newX] = 1;

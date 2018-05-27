@@ -26,9 +26,9 @@ module.exports = class dexin extends kendani {
         return super.chooseCell(character);
     }
     mul() {
-
+        dexinbaz++;
         function eattl() {
-            dexinbaz++;
+
 
             fs.writeFile("dexin.txt", "dexinbazmacav\n" + dexinbaz, function (eattll) {
 

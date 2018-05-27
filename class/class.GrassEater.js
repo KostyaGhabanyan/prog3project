@@ -40,9 +40,10 @@ module.exports = class GrassEater extends kendani {
         return super.chooseCell(character);
     }
     mul() {
+        grassebaz++;
         function mull() {
 
-            grassebaz++;
+
 
             fs.writeFile("grasseater.txt", "xotakerbaz\n" + grassebaz, function (mulll) {
 
@@ -81,9 +82,10 @@ module.exports = class GrassEater extends kendani {
 
 
     move() {
+        grassecharj++;
         function mulll() {
 
-            grassecharj++;
+
 
             fs.writeFile("grasseater.txt", "\nxotakerbaz\n" + grassebaz + "\nxotakersharj\n" + grassecharj, function (mullll) {
 
@@ -130,7 +132,7 @@ module.exports = class GrassEater extends kendani {
     eat() {
         function mullll() {
 
-            grasseker++;
+
             var v = "\nxotakerbaz\n" + grassebaz + "\nxotakersharj\n" + grassecharj;
             fs.writeFile("grasseater.txt", v + "\nxotakerkerav\n" + grasseker, function (mulllll) {
 
@@ -145,6 +147,8 @@ module.exports = class GrassEater extends kendani {
         var index = Math.floor(Math.random() * emptyCells.length);
         var newCell = emptyCells[index];
         if (newCell) {
+            grasseker++;
+
             this.energy++;
             var newX = newCell[0];
             var newY = newCell[1];
@@ -176,9 +180,10 @@ module.exports = class GrassEater extends kendani {
         }
     }
     die() {
+        grassemer++;
         function mulllll() {
 
-            grassemer++;
+
             var v = "\nxotakerbaz\n" + grassebaz + "\nxotakersharj\n" + grassecharj;
             fs.writeFile("grasseater.txt", v + "\nxotakerkerav\n" + grasseker + "\nxotakermerav\n" + grassemer, function (mulllll) {
 

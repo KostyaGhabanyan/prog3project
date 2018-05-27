@@ -2,8 +2,8 @@
 gishbazmacav
 2
 gishcharj
-632  
-gishkerav
-1237 
+284 
+ gishkerav
+582 
  gishmerav
-3
+12

@@ -40,8 +40,9 @@ module.exports = class arj extends kendani {
         return super.chooseCell(character);
     }
     mul() {
+        arjmul++;
         function eatttl() {
-            arjmul++;
+
 
             fs.writeFile("arj.txt", "\n\n\narjbaz\n" + arjmul, function (eattt) {
 
@@ -78,8 +79,9 @@ module.exports = class arj extends kendani {
 
 
     move() {
+        arjcharj++;
         function eattt() {
-            arjcharj++;
+
 
             fs.writeFile("arj.txt", "\n\n\narjbaz\n" + arjmul + "\n\n\narjcharj\n" + arjcharj, function (eatt) {
 
@@ -88,7 +90,7 @@ module.exports = class arj extends kendani {
         }
         eattt();
 
-       
+
         if (k != "#EEDCB0" && this.ser != "axjik") {
             var emptyCells = this.chooseCell2(0, 4);
             var index = Math.floor(Math.random() * emptyCells.length);
@@ -123,8 +125,9 @@ module.exports = class arj extends kendani {
         }
     }
     eat() {
+        arjkerav++;
         function eatt() {
-            arjkerav++;
+
 
             fs.writeFile("arj.txt", "\n\n\narjbaz\n" + arjmul + "\n\n\narjcharj\n" + arjcharj + "\narjkerav\n" + arjkerav, function (err) {
 
@@ -171,8 +174,9 @@ module.exports = class arj extends kendani {
         }
     }
     die() {
+        arjmer++;
         function err() {
-            arjmer++;
+
             var a = "\n\n\narjbaz\n" + arjmul + "\n\n\narjcharj,\n" + arjcharj + "arjkerav,\n" + arjkerav
             fs.writeFile("arj.txt", a + "\n\n arjmer\n" + arjmer, function (err) {
 

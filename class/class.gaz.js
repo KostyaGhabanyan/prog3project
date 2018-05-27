@@ -41,10 +41,10 @@ module.exports = class gaz extends kendani {
         return super.chooseCell(character);
     }
     mul() {
-
+        gazbaz++;
         function eattll() {
 
-            gazbaz++;
+
 
             fs.writeFile("gaz.txt", "gazbaz\n" + gazbaz, function (eattlll) {
 
