@@ -26,18 +26,7 @@ module.exports = class dexin extends kendani {
         return super.chooseCell(character);
     }
     mul() {
-        dexinbaz++;
-        function eattl() {
-
-
-            fs.writeFile("dexin.txt", "dexinbazmacav\n" + dexinbaz, function (eattll) {
-
-
-            });
-
-        }
-
-        eattl();
+        
 
 
 
@@ -59,6 +48,7 @@ module.exports = class dexin extends kendani {
         var index = Math.floor(Math.random() * this.chooseCell(1).length);
         var newCell = this.chooseCell(1)[index];
         if (newCell && this.multiply >= 12) {
+            dexinbaz++;
             var newX = newCell[0];
             var newY = newCell[1];
             matrix[newY][newX] = 4;

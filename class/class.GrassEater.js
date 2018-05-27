@@ -40,19 +40,8 @@ module.exports = class GrassEater extends kendani {
         return super.chooseCell(character);
     }
     mul() {
-        grassebaz++;
-        function mull() {
-
-
-
-            fs.writeFile("grasseater.txt", "xotakerbaz\n" + grassebaz, function (mulll) {
-
-
-            });
-
-        }
-
-        mull();
+        
+       
 
         if (k == "#EEDCB0") {
             this.multiply += 12
@@ -69,6 +58,7 @@ module.exports = class GrassEater extends kendani {
         var newCell = this.chooseCell(0)[index];
 
         if (newCell) {
+            grassebaz++;
             var newX = newCell[0];
             var newY = newCell[1];
             matrix[newY][newX] = 2;
@@ -82,25 +72,15 @@ module.exports = class GrassEater extends kendani {
 
 
     move() {
-        grassecharj++;
-        function mulll() {
-
-
-
-            fs.writeFile("grasseater.txt", "\nxotakerbaz\n" + grassebaz + "\nxotakersharj\n" + grassecharj, function (mullll) {
-
-
-            });
-
-        }
-
-        mulll();
+        
+        
 
         if (k != "#EFEFEF") {
             var emptyCells = this.chooseCell2(0, 4);
             var index = Math.floor(Math.random() * emptyCells.length);
             var newCell = emptyCells[index];
             if (newCell) {
+                grassecharj++;
                 this.energy--;
                 var newX = newCell[0];
                 var newY = newCell[1];
@@ -130,18 +110,7 @@ module.exports = class GrassEater extends kendani {
         }
     }
     eat() {
-        function mullll() {
-
-
-            var v = "\nxotakerbaz\n" + grassebaz + "\nxotakersharj\n" + grassecharj;
-            fs.writeFile("grasseater.txt", v + "\nxotakerkerav\n" + grasseker, function (mulllll) {
-
-
-            });
-
-        }
-
-        mullll();
+        
 
         var emptyCells = this.chooseCell(1);
         var index = Math.floor(Math.random() * emptyCells.length);
@@ -180,26 +149,15 @@ module.exports = class GrassEater extends kendani {
         }
     }
     die() {
-        grassemer++;
-        function mulllll() {
-
-
-            var v = "\nxotakerbaz\n" + grassebaz + "\nxotakersharj\n" + grassecharj;
-            fs.writeFile("grasseater.txt", v + "\nxotakerkerav\n" + grasseker + "\nxotakermerav\n" + grassemer, function (mulllll) {
-
-
-            });
-
-        }
-
-        mulllll();
-
+        
+       
 
 
         matrix[this.y][this.x] = 0;
 
         for (var i in xotaker) {
             if (this.x == xotaker[i].x && this.y == xotaker[i].y) {
+                grassemer++;
                 xotaker.splice(i, 1);
                 break;
             }

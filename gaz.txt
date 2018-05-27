@@ -1,6 +1,6 @@
 gazbazmacav
 0
 gazkerav
-520
+438
 gazmerav
-361
+313

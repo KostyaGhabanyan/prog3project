@@ -41,19 +41,8 @@ module.exports = class gaz extends kendani {
         return super.chooseCell(character);
     }
     mul() {
-        gazbaz++;
-        function eattll() {
-
-
-
-            fs.writeFile("gaz.txt", "gazbaz\n" + gazbaz, function (eattlll) {
-
-
-            });
-
-        }
-
-        eattll();
+        
+       
 
 
         if (k == "#EEDCB0") {
@@ -71,6 +60,7 @@ module.exports = class gaz extends kendani {
         var newCell = this.chooseCell(4)[index];
 
         if (newCell) {
+            gazbaz++;
             var newX = newCell[0];
             var newY = newCell[1];
             matrix[newY][newX] = 5;
@@ -86,19 +76,8 @@ module.exports = class gaz extends kendani {
 
 
     eat() {
-        gazkerav++;
-        function eattlll() {
-
-
-            var c = "gazbazmacav\n" + gazbaz
-            fs.writeFile("gaz.txt", c + "\ngazkerav\n" + gazkerav, function (eattllll) {
-
-
-            });
-
-        }
-
-        eattlll();
+        
+        
 
 
 
@@ -108,6 +87,7 @@ module.exports = class gaz extends kendani {
         var newCell = emptyCells[index];
 
         if (newCell) {
+            gazkerav++;
             var newX = newCell[0];
             var newY = newCell[1];
             if (matrix[newY][newX] == 1) {
@@ -143,27 +123,17 @@ module.exports = class gaz extends kendani {
 
     }
     die() {
-        gazmerav++;
-        function eattllll() {
-            var t = "gazbazmacav\n" + gazbaz + "\ngazkerav\n" + gazkerav
-            fs.writeFile("gaz.txt", t + "\ngazmerav\n" + gazmerav, function (eattllll) {
-
-
-            });
-
-        }
-
-        eattllll();
 
 
 
-
+        
 
 
         matrix[this.y][this.x] = 0;
 
         for (var i in gazg) {
             if (this.x == gazg[i].x && this.y == gazg[i].y) {
+                gazmerav++;
                 gazg.splice(i, 1);
                 break;
             }

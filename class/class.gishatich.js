@@ -40,19 +40,10 @@ module.exports = class gishatich extends kendani {
         return super.chooseCell(character);
     }
     mul() {
-        gishmul++;
-        function eattr() {
+       
+        
 
-
-
-            fs.writeFile("gish.txt", "gishbazmacav\n" + gishmul, function (eattrr) {
-
-
-            });
-
-        }
-
-        eattr();
+        
 
 
 
@@ -70,6 +61,7 @@ module.exports = class gishatich extends kendani {
         var index = Math.floor(Math.random() * this.chooseCell(0).length);
         var newCell = this.chooseCell(0)[index];
         if (newCell) {
+             gishmul++;
             var newX = newCell[0];
             var newY = newCell[1];
             matrix[newY][newX] = 3;
@@ -83,19 +75,8 @@ module.exports = class gishatich extends kendani {
 
 
     move() {
-        gishcharj++;
-        function eattrr() {
-
-
-
-            fs.writeFile("gish.txt", "\ngishbazmacav\n" + gishmul + "\ngishcharj\n" + gishcharj, function (eattrrr) {
-
-
-            });
-
-        }
-
-        eattrr();
+        
+        
         if (this.ser == 0) {
             var d = 2
         }
@@ -112,6 +93,7 @@ module.exports = class gishatich extends kendani {
 
 
         if (newCell) {
+            gishcharj++;
             this.energy--;
             var newX = newCell[0];
             var newY = newCell[1];
@@ -150,19 +132,8 @@ module.exports = class gishatich extends kendani {
 
     }
     eat() {
-        gishkerav++;
-        function eattrrr() {
-
-
-
-            fs.writeFile("gish.txt", "\ngishbazmacav\n" + gishmul + "\ngishcharj\n" + gishcharj + "  \ngishkerav\n" + gishkerav, function (eattrrrr) {
-
-
-            });
-
-        }
-
-        eattrrr();
+        
+        
 
 
 
@@ -171,6 +142,7 @@ module.exports = class gishatich extends kendani {
         var newCell = emptyCells[index];
 
         if (newCell) {
+            gishkerav++;
             this.energy++;
             var newX = newCell[0];
             var newY = newCell[1];
@@ -194,19 +166,8 @@ module.exports = class gishatich extends kendani {
         }
     }
     die() {
-        gishmer++;
-        function eattrrrr() {
-
-
-            var f = "\ngishbazmacav\n" + gishmul + "\ngishcharj\n" + gishcharj + " \n gishkerav\n" + gishkerav
-            fs.writeFile("gish.txt", f + " \n gishmerav\n" + gishmer, function (eattrrrr) {
-
-
-            });
-
-        }
-
-        eattrrrr();
+        
+        
 
 
 
@@ -214,6 +175,7 @@ module.exports = class gishatich extends kendani {
         matrix[this.y][this.x] = 0;
         for (var i in gish) {
             if (this.x == gish[i].x && this.y == gish[i].y) {
+                gishmer++;
                 gish.splice(i, 1);
                 break;
             }

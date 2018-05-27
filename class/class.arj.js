@@ -40,16 +40,8 @@ module.exports = class arj extends kendani {
         return super.chooseCell(character);
     }
     mul() {
-        arjmul++;
-        function eatttl() {
-
-
-            fs.writeFile("arj.txt", "\n\n\narjbaz\n" + arjmul, function (eattt) {
-
-            });
-
-        }
-        eatttl();
+        
+        
 
 
         if (k == "#EEDCB0") {
@@ -66,6 +58,7 @@ module.exports = class arj extends kendani {
         var index = Math.floor(Math.random() * this.chooseCell(0).length);
         var newCell = this.chooseCell(0)[index];
         if (newCell) {
+            arjmul++;
             var newX = newCell[0];
             var newY = newCell[1];
             matrix[newY][newX] = 6;
@@ -79,16 +72,8 @@ module.exports = class arj extends kendani {
 
 
     move() {
-        arjcharj++;
-        function eattt() {
-
-
-            fs.writeFile("arj.txt", "\n\n\narjbaz\n" + arjmul + "\n\n\narjcharj\n" + arjcharj, function (eatt) {
-
-            });
-
-        }
-        eattt();
+        
+        
 
 
         if (k != "#EEDCB0" && this.ser != "axjik") {
@@ -96,6 +81,7 @@ module.exports = class arj extends kendani {
             var index = Math.floor(Math.random() * emptyCells.length);
             var newCell = emptyCells[index];
             if (newCell) {
+                arjcharj++;
                 this.energy--;
                 var newX = newCell[0];
                 var newY = newCell[1];
@@ -125,18 +111,8 @@ module.exports = class arj extends kendani {
         }
     }
     eat() {
-        arjkerav++;
-        function eatt() {
-
-
-            fs.writeFile("arj.txt", "\n\n\narjbaz\n" + arjmul + "\n\n\narjcharj\n" + arjcharj + "\narjkerav\n" + arjkerav, function (err) {
-
-
-            });
-
-        }
-
-        eatt();
+        
+       
 
 
 
@@ -145,6 +121,7 @@ module.exports = class arj extends kendani {
         var newCell = emptyCells[index];
 
         if (newCell) {
+            arjkerav++;
             this.energy++;
             var newX = newCell[0];
             var newY = newCell[1];
@@ -174,19 +151,12 @@ module.exports = class arj extends kendani {
         }
     }
     die() {
-        arjmer++;
-        function err() {
-
-            var a = "\n\n\narjbaz\n" + arjmul + "\n\n\narjcharj,\n" + arjcharj + "arjkerav,\n" + arjkerav
-            fs.writeFile("arj.txt", a + "\n\n arjmer\n" + arjmer, function (err) {
-
-            });
-
-        }
-        err();
+        
+        
         matrix[this.y][this.x] = 0;
         for (var i in arja) {
             if (this.x == arja[i].x && this.y == arja[i].y) {
+                arjmer++;
                 arja.splice(i, 1);
                 break;
             }

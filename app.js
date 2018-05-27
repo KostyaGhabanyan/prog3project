@@ -1,43 +1,18 @@
-var express = require('express'),  
-    app = express.createServer(express.logger()),
-    io = require('socket.io').listen(app);
+var fs = require('fs');
+var express = require('express');
 
-// Configuration
-
-app.configure(function() {  
-  app.use(express.bodyParser());
-  app.use(express.methodOverride());
-  app.use(app.router);
-  app.use(express.static(__dirname + '/public'));
-});
-
-app.configure('development', function() {  
-  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-});
-
-app.configure('production', function() {  
-  app.use(express.errorHandler());
-});
-
-// Heroku won't actually allow us to use WebSockets
-// so we have to setup polling instead.
-// https://devcenter.heroku.com/articles/using-socket-io-with-node-js-on-heroku
-io.configure(function () {  
-  io.set("transports", ["xhr-polling"]); 
-  io.set("polling duration", 10); 
-});
-
-// Routes
-
-var port = process.env.PORT || 5000; // Use the port that Heroku provides or default to 5000  
-app.listen(port, function() {  
-  console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
-});
-
+var app = express();
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
+app.set('port', process.env.PORT || 3000);
+app.use(express.static("public"));
 
 app.get("/", function (req, res) {
     res.redirect("public");
 });
+
+server.listen(app.get('port'));
+
 
 function ha() {
     var l = Math.floor(Math.random() * 4 + 1);
@@ -166,9 +141,7 @@ function drawInServer() {
     for (i in gazg) {
         gazg[i].eat()
     }
-    // for (i in gazg) {
-    //     gazg[i].mul()
-    // }
+    
     for (i in arja) {
         arja[i].eat()
     }
@@ -185,24 +158,146 @@ function na() {
 }
 var takter = 0;
 var obj = {
-    'xotQanak': [],
-    'xotakerQanak': [],
+    'xotbazmanal': [],
+    'xotakerbazmanal': [],
+    'xotakercharj': [],
+    'grasseker': [],
+    'grassemer': [],
+    'gishmul': [],
+    'gishcharj': [],
+    'gishkerav': [],
+    'gishmer': [],
+    'gazbaz': [],
+    'gazkerav': [],
+    'gazmerav': [],
+    'dexinbaz': [],
+    'arjmul': [],
+    'arjcharj': [],
+    'arjmer': [],
+    
+    
 };
 io.on('connection', function () {
-    setInterval(function () {
+  
+
+});
+  setInterval(function () {
         takter++;
         drawInServer();
         na();
         ha();
 
-
+var myJSON = JSON.stringify(obj);
         if (takter % 2 == 0) {
-            obj.xotQanak.push(grassbaz);
-            fs.writeFile("grass.json", obj);;
+            obj.xotbazmanal.push(grassbaz);
+            fs.writeFile("grass.json", myJSON);;
             console.log(obj);
 
         }
+         if (takter % 2 == 0) {
+            obj.xotakerbazmanal.push(grassebaz);
+            fs.writeFile("grass.json", myJSON);;
+            console.log(obj);
+
+         }
+         if (takter % 2 == 0) {
+            obj.xotakercharj.push(grassecharj);
+            fs.writeFile("grass.json", myJSON);;
+            console.log(obj);
+
+         }
+           if (takter % 2 == 0) {
+            obj.grassemer.push(grassemer);
+            
+            fs.writeFile("grass.json", myJSON );;
+            console.log(obj);
+
+         }
+         if (takter % 2 == 0) {
+            obj.grasseker.push(grasseker);
+            
+            fs.writeFile("grass.json", myJSON);;
+            console.log(obj);
+
+         }
+          if (takter % 2 == 0) {
+            obj. gishmul.push( gishmul);
+            
+            fs.writeFile("grass.json", myJSON);;
+            console.log(obj);
+
+         }
+         if (takter % 2 == 0) {
+            obj.gishcharj.push( gishcharj);
+            
+            fs.writeFile("grass.json", myJSON);;
+            console.log(obj);
+
+         }
+          if (takter % 2 == 0) {
+            obj.gishkerav.push( gishkerav);
+            
+            fs.writeFile("grass.json", myJSON);;
+            console.log(obj);
+
+         }
+           if (takter % 2 == 0) {
+            obj. gishmer.push(  gishmer);
+            
+            fs.writeFile("grass.json", myJSON);;
+            console.log(obj);
+
+         }
+            if (takter % 2 == 0) {
+            obj. gazbaz.push(  gazbaz);
+            
+            fs.writeFile("grass.json",myJSON);;
+            console.log(obj);
+
+         }
+         if (takter % 2 == 0) {
+            obj. gazkerav.push(gazkerav);
+            
+            fs.writeFile("grass.json",myJSON);;
+            console.log(obj);
+
+         }
+          if (takter % 2 == 0) {
+            obj.gazmerav.push(gazmerav);
+            
+            fs.writeFile("grass.json", myJSON);;
+            console.log(obj);
+
+         }
+         if (takter % 2 == 0) {
+            obj.dexinbaz.push(dexinbaz);
+            
+            fs.writeFile("grass.json", myJSON);;
+            console.log(obj);
+
+         }
+          if (takter % 2 == 0) {
+            obj.arjmul.push(arjmul);
+            
+            fs.writeFile("grass.json", myJSON);;
+            console.log(obj);
+
+         }
+         if (takter % 2 == 0) {
+            obj.arjcharj.push(arjcharj);
+            
+            fs.writeFile("grass.json", myJSON);;
+            console.log(obj);
+
+         }
+           if (takter % 2 == 0) {
+            obj.arjmer.push(arjmer);
+            
+            fs.writeFile("grass.json", myJSON);;
+            console.log(obj);
+
+         }
+         
+         
+
     }, 3000);
-
-
-});
